@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}" />
+  </head>
+  <link rel="shortcut icon" href="{{ url_for('static', filename='images.jpeg') }}">
+
+  <body>
+    <form action="/submit_order" method="post">
+      <center>
+        <div class="Quote"><p>{{q}}</p></div>
+        
+      </center>
+
+      <center>
+        <input
+          placeholder="Table No."
+          class="input1"
+          name="table_number"
+          required
+          type="number" />
+      </center>
+      <div class="container">
+        <div class="container1">
+          {% for thali, dishes in ITEMS.items() %} {% if dishes %}
+          <!-- Check if dishes exist for this thali -->
+          <div class="Thali">
+            <center>
+              <h1 class="header">{{ thali }}</h1>
+            </center>
+            <table>
+              <thead>
+                <tr class="navbar">
+                  <th>Name</th>
+                  <th>Price</th>
+                  <th>Quantity</th>
+                  <th>Mark</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for dish, price in dishes.items() %}
+                <tr class="Dish">
+                  <td class="dishname">{{ dish }}</td>
+                  <td class="price">{{ price }}/-</td>
+                  <td>
+                    <input
+                      type="number"
+                      name="{{ dish }}_quantity"
+                      class="number-quantity"
+                      min="0"
+                      max="1000"
+                      step="1"
+            
+                      value="0" />
+                  </td>
+                  <td>
+                    <input
+                      type="checkbox"
+                      class="checkbox"
+                      name="item"
+                      value="{{ dish }}"
+                      onclick="handleCheckboxClick(this)" />
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+          {% endif %} {% endfor %}
+        </div>
+      </div>
+      <center>
+        <div id="l" class="Quote">You've All Catch Up!!</div>
+      </center>
+      <button type="submit" id="order">Order</button>
+      <script>
+        function handleCheckboxClick(checkbox) {
+          // Find the associated quantity input
+          const quantityInput =
+            checkbox.parentElement.previousElementSibling.querySelector(
+              ".number-quantity"
+            );
+          // If checkbox is checked and quantity is 0, set quantity to 1
+          if (checkbox.checked && quantityInput.value === "0") {
+            quantityInput.value = "1";
+          }
+        }
+      </script>
+    </form>
+  </body>
+</html>

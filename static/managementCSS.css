@@ -1,0 +1,169 @@
+* {
+  margin: 0 0;
+}
+body {
+  background-color: black;
+}
+h1 {
+  background-color: wheat;
+  border: 2px solid black;
+  border-radius: 15px;
+  width: 52vw;
+  /* margin: 2em; */
+  /* box-shadow: 0px 0px 15px wheat; */
+}
+.k {
+  margin-top: 1em;
+  margin-bottom: 1.2em;
+}
+.container1 {
+  background: rgba(24, 20, 20, 0.987);
+  border: 2px solid wheat;
+  position: relative;
+  top: 10%;
+  width: 85vw;
+  height: 70vh;
+  border-radius: 15px;
+}
+.header {
+  /* position: relative;
+    top: 0; */
+  background-color: wheat;
+  color: black;
+  border-radius: 15px;
+  box-shadow: none;
+  margin-top: -0.6em;
+  padding: 0;
+  width: 50vw;
+}
+
+.card {
+  width: 190px;
+  padding: 1.9rem 1.2rem;
+  text-align: center;
+  background: rgba(24, 20, 20, 0.987);
+
+  border-radius: 15px;
+}
+
+/*Inputs*/
+.field {
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  background-color: #1f2029;
+  border-radius: 4px;
+  padding: 0.5em 1em;
+}
+
+.input-icon {
+  height: 1em;
+  width: 1em;
+  fill: #ffeba7;
+}
+
+.input-field {
+  background: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  color: #d3d3d3;
+}
+
+/*Text*/
+.title {
+  margin-bottom: 1rem;
+  font-size: 1.5em;
+  font-weight: 500;
+  color: #f5f5f5;
+}
+
+/*Buttons*/
+.btn {
+  margin: 1rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  padding: 0.6em 1.2em;
+  background-color: #ffeba7;
+  color: #5e6681;
+  box-shadow: 0 8px 24px 0 rgb(255 235 167 / 20%);
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-link {
+  color: #f5f5f5;
+  display: block;
+  font-size: 0.75em;
+  transition: color 0.3s ease-out;
+}
+
+/*Hover & focus*/
+.field input:focus::placeholder {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.btn:hover {
+  background-color: #5e6681;
+  color: #ffeba7;
+  box-shadow: 0 8px 24px 0 rgb(16 39 112 / 20%);
+}
+
+.btn-link:hover {
+  color: #ffeba7;
+}
+.container2 {
+  color: wheat;
+}
+tr {
+  background-color: wheat;
+  color: #000;
+}
+.dark {
+  background-color: rgb(142, 135, 88);
+}
+td {
+  color: black;
+}
+#he {
+  color: black;
+  width: 50vw;
+  margin-top: -0.6em;
+  margin-bottom: 1em;
+}
+
+table {
+  width: 50vw;
+  box-shadow: 0px 0px 15px wheat;
+}
+.center {
+  text-align: center;
+}
+.remove {
+  background-color: red;
+  color: black;
+  border: 2px black solid;
+  box-shadow: 0px 0px 5px red;
+  margin: 2em;
+  height: 8vh;
+  width: 11vw;
+  border-radius: 15px;
+  transition: all ease 0.3s;
+}
+
+.remove:hover {
+  box-shadow: 0px 0px 40px red;
+  /* font-weight: 900; */
+}
+.container3 {
+  border: 2px solid wheat;
+  border-radius: 15px;
+  height: fit-content;
+  width: 85vw;
+  margin-top: 2em;
+}

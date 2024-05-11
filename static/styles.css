@@ -1,0 +1,354 @@
+* {
+  margin: 0 0;
+  padding: 0;
+}
+body {
+  background-color: rgb(27, 24, 24);
+}
+.Quote {
+  height: 10vh;
+  width: 60vw;
+  background-color: bisque;
+  border-radius: 35px;
+  filter: drop-shadow(0 0 0.75rem wheat);
+  text-align: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2em;
+  font-weight: 900;
+  font-size: 1.2em;
+  font-family: "Quicksand";
+
+  border: 2px solid black;
+}
+#l {
+  position: relative;
+  bottom: 2em;
+}
+.Thali {
+  color: wheat;
+  font-size: 3em;
+  font-family: "Quicksand";
+  font-weight: 500;
+  border: 2px solid wheat;
+  border-radius: 20px;
+  word-wrap: normal;
+  font-size: 1.2em;
+  text-align: center;
+  margin: 1em 0;
+}
+
+#order {
+  width: fit-content;
+  height: 10vh;
+  padding: 0.5em 1.5em;
+  text-align: center;
+  border-radius: 15px;
+  background-color: rgb(178, 41, 41);
+  font-size: large;
+  font-weight: 700;
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  font-family: "Quicksand";
+  position: fixed;
+  bottom: 3em;
+  right: 6%;
+}
+#order:hover {
+  background-color: honeydew;
+  box-shadow: 0px 0px 10px wheat;
+}
+#order:active {
+  background-color: brown;
+}
+.container1 {
+  /* backgro    und-color: rgb(16, 143, 255); */
+  height: fit-content;
+  width: 100vw;
+  margin: 2em;
+  padding: 1em;
+  display: flex;
+  flex-wrap: nowrap;
+  /* background-color: antiquewhite; */
+  /* border: 2px solid wheat; */
+  border-radius: 15px;
+  /* background-color: rgb(62, 50, 50); */
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.container2 {
+  background-color: rgb(62, 50, 50);
+  /* border: 2px solid wheat; */
+  width: 60vw;
+  height: fit-content;
+  margin: 2em;
+  border-radius: 15px;
+}
+.navbar {
+  position: relative;
+  top: 0%;
+  display: flex;
+  flex-direction: row;
+  flex-flow: row;
+  gap: 8em;
+  justify-content: center;
+  /* justify-content: center; */
+  color: wheat;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+.horizontal {
+  height: 2px;
+  width: 55vw;
+  background-color: wheat;
+  border: 50px;
+}
+.number-control {
+  display: flex;
+  align-items: center;
+}
+
+.number-left::before,
+.number-right::after {
+  content: attr(data-content);
+  background-color: #333333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  width: 20px;
+  color: white;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.number-left::before {
+  content: "-";
+}
+
+.number-right::after {
+  content: "+";
+}
+
+.number-quantity {
+  padding: 0.25rem;
+  border: 0;
+  width: 50px;
+  -moz-appearance: textfield;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.number-left:hover::before,
+.number-right:hover::after {
+  background-color: #666666;
+}
+
+.checkbox {
+  appearance: none;
+  width: 30px;
+  aspect-ratio: 1;
+  border-radius: 8px;
+  border: 2px solid black;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+}
+
+.checkbox::before {
+  font-family: "Quicksand", sans-serif;
+  position: absolute;
+  bottom: -4px;
+  left: 1px;
+  content: "✔";
+  font-size: 40px;
+  color: wheat;
+  transform: scale(0);
+  transition: all 0.3s ease-in-out;
+}
+
+.checkbox:checked::before {
+  animation: zoom 0.5s ease-in-out;
+  transform: scale(1);
+}
+
+@keyframes zoom {
+  0% {
+    transform: scale(0);
+  }
+
+  20% {
+    transform: scale(1.5);
+  }
+
+  40% {
+    transform: scale(0.5);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+
+  70% {
+    transform: scale(1.2);
+  }
+
+  90% {
+    transform: scale(0.8);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+.dishname {
+  color: wheat;
+  white-space: nowrap;
+  width: 15vw;
+  margin-left: -27em;
+  text-align: center;
+}
+.navbar th {
+  color: wheat;
+  text-align: center;
+}
+
+.Dish {
+  display: flex;
+  flex-direction: row;
+  /* gap: 8em; */
+  height: 8vh;
+  justify-content: center;
+}
+
+.navbar {
+  flex-direction: row;
+  margin: 1em 0em;
+  display: flex;
+  margin-left: 5em;
+  justify-content: space-evenly;
+  /* margin: 0; */
+}
+
+.price {
+  position: absolute;
+  left: 18.4em;
+  color: wheat;
+}
+.number-quantity {
+  background-color: transparent;
+  color: wheat;
+  position: absolute;
+  left: 41.5em;
+}
+.checkbox {
+  position: absolute;
+  right: 15em;
+}
+
+h1 {
+  border-bottom: 2px solid wheat;
+  background-color: wheat;
+  color: black;
+  border-radius: 15px;
+}
+.header {
+  width: 50vw;
+  margin-top: -0.6em;
+}
+
+.input1 {
+  background-color: transparent;
+  max-width: 200px;
+  height: 27px;
+  padding: 10px;
+  margin: 1em 1em;
+  text-align: center;
+  border: 3px solid wheat;
+  /* color: wheat; */
+  font-size: 1.2em;
+  border-radius: 5px;
+}
+
+.input1:focus {
+  color: wheat;
+  background-color: transparent;
+  outline-color: black;
+  transition: 0.2s;
+  transition-property: box-shadow;
+}
+@media only screen and (max-width: 455px) {
+  body{
+margin: 0;
+padding:0;
+  }
+  .Quote{
+    width: 80vw;
+    height: 15vh;
+  }
+  .input1{
+    margin-top: 3em;
+
+    border-radius:15px ;
+  }
+  .container{
+    display: flex;
+    margin-top: -0.5em;
+    flex-direction: column;
+  }
+  .container1{
+    width: 95vw;
+    align-self: center;
+  }
+  table{
+    width: 50vw;
+    align-self: center;
+    border-collapse: collapse;
+    /* width: 100%; */
+  }
+  .navbar{
+    width: 95vw;
+    position: relative;
+    left: 0;
+    gap: 0;
+    margin-left: 0;
+  }
+  .dishname{
+    margin-left: 0;
+    /* background-color: blue; */
+    width: 20vw;
+
+
+    position: relative;
+    left: -35%;
+    
+    max-width: 20vw; /* Adjust maximum width as needed */
+    /* overflow: hidden; */
+    white-space: wrap;
+    font-size: inherit;
+    text-overflow: ellipsis;
+  }
+  .price{
+    font-size: 0.7em;
+    margin-left: 0;
+    position: absolute;
+    left: 9em;
+    margin-top: 0.38em;
+  }
+  .number-quantity{
+    position: absolute;
+    left: 12.5em;
+  }
+  .checkbox{
+    position: absolute;
+    left: 19.5em;
+ 
+  }
+}

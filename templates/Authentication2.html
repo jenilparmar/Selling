@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Authentication</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images.jpeg') }}">
+
+  </head>
+  <style>
+    body {
+      background-color: rgb(41, 38, 38);
+    }
+    .login-box {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 400px;
+      padding: 40px;
+      transform: translate(-50%, -50%);
+      background: rgba(24, 20, 20, 0.987);
+      box-sizing: border-box;
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+      box-shadow: 0px 0px 15px wheat;
+    }
+
+    .login-box .user-box {
+      position: relative;
+    }
+
+    .login-box .user-box input {
+      width: 100%;
+      padding: 10px 0;
+      font-size: 16px;
+      color: #fff;
+      margin-bottom: 30px;
+      border: none;
+      border-bottom: 1px solid #fff;
+      outline: none;
+      background: transparent;
+    }
+
+    .login-box .user-box label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 10px 0;
+      font-size: 16px;
+      color: #fff;
+      pointer-events: none;
+      transition: 0.5s;
+    }
+
+    .login-box .user-box input:focus ~ label,
+    .login-box .user-box input:valid ~ label {
+      top: -20px;
+      left: 0;
+      color: #bdb8b8;
+      font-size: 12px;
+    }
+
+    .login-box form button {
+      position: relative;
+      display: inline-block;
+      padding: 10px 20px;
+      color: white;
+      font-size: 16px;
+      text-decoration: none;
+      text-transform: uppercase;
+      overflow: hidden;
+      transition: 0.5s;
+      background-color: transparent;
+      margin-top: 40px;
+      border: 2px solid wheat;
+      border-radius: 5px;
+      letter-spacing: 4px;
+    }
+
+    .login-box button:hover {
+      background: wheat;
+      color: #000;
+      border-radius: 5px;
+      border: 2px solid black;
+
+      box-shadow: 0 0 5px wheat, 0 0 25px wheat, 0 0 50px wheat, 0 0 100px wheat;
+    }
+
+    .login-box button span {
+      position: absolute;
+      display: block;
+    }
+
+    @keyframes btn-anim1 {
+      0% {
+        left: -100%;
+      }
+
+      50%,
+      100% {
+        left: 100%;
+      }
+    }
+
+    .login-box button span:nth-child(1) {
+      bottom: 2px;
+      left: -100%;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, wheat);
+      animation: btn-anim1 2s linear infinite;
+    }
+  </style>
+  <body>
+    <center>
+      <div class="login-box">
+        <form action="/Billings_and_Managements" method="post">
+          
+            <div class="user-box">
+            <input type="text" name="username" required="true" />
+            <label>Username</label>
+          </div>
+          <div class="user-box">
+            <input type="password" name="password" required="true" />
+            <label>Password</label>
+          </div>
+          <center>
+            <button type="submit">
+              Validate
+              <span></span>
+            </button>
+          </center>
+        </form>
+      </div>
+    </center>
+  </body>
+</html>

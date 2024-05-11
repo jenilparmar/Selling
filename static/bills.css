@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: black;
+}
+.container {
+  background-color: transparent;
+  width: 90vw;
+  height: fit-content;
+  border-radius: 15px;
+  margin-top: 2em;
+}
+.order {
+  background-color: transparent;
+  margin: 2em 0em;
+  border-radius: 15px;
+  border: 2px solid wheat;
+  color: wheat;
+  height: fit-content;
+  /* display: block; */
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  justify-content: space-around;
+}
+.table_number {
+  margin-top: -0.6em;
+  background-color: wheat;
+  border-radius: 15px;
+  width: 30vw;
+  height: 6vh;
+  font-size: 1.5em;
+  color: black;
+  font-weight: 500;
+  text-align: center;
+  position: relative;
+  border: 2px solid wheat;
+}
+li {
+  list-style-type: none;
+}
+.id {
+  width: fit-content;
+  height: 4vh;
+  margin: 1em 0;
+  background-color: wheat;
+  border-radius: 5px;
+  color: black;
+  /* position: relative;
+  left: -20%; */
+}
+
+table {
+  background-color: wheat;
+  color: black;
+  border: 2px solid black;
+  margin: 1em 0;
+  width: 40em;
+  /* position: relative;
+  left: -38%; */
+}
+thead {
+  background-color: rgb(101, 126, 70);
+}
+.center {
+  text-align: center;
+}
+
+button {
+  width: 24vw;
+  height: 12vh;
+  border-radius: 5px;
+  border: 2px solid wheat;
+  background-color: transparent;
+  color: wheat;
+  margin: 1.5em 18px;
+  position: relative;
+  right: -313%;
+  bottom: -4%;
+  transition: all ease 0.4s;
+}
+button:hover {
+  background-color: wheat;
+  border: 2px solid black;
+  box-shadow: 0 0 5px wheat, 0 0 15px wheat, 0 0 25px wheat, 0 0 10px wheat;
+  font-size: 1em;
+  font-weight: 500;
+  color: black;
+}
+.list {
+  position: relative;
+  right: -15%;
+  width: fit-content;
+  height: fit-content;
+  margin-top: 2em;
+}
+tr {
+  font-size: 1.2em;
+}
+a {
+  display: inline-block;
+  content: layout;
+  position: relative;
+  top: 10%;
+  right: 76%;
+}
+td {
+  text-align: center;
+}
+.c {
+  display: flex;
+  flex-direction: row;
+}
+
+.payment-options{
+  display: flex;
+  gap: 2em;
+  margin-left: -14em;
+  margin-top: -1.5em;
+}

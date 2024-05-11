@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Remove Items</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images.jpeg') }}">
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='managementCSS.css') }}" />
+  </head>
+  <body>
+    <center>
+      <div class="container3">
+        <h1>Remove Items</h1>
+        <div class="container2">
+          <h2>Removed Items:</h2>
+          {% for item in removed_items %}
+          <h3>{{ item }}</h3>
+          {% endfor %}
+        </div>
+      </div>
+      
+    </center>
+  </body>
+</html>

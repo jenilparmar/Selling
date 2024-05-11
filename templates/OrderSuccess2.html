@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Details</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images.jpeg') }}">
+
+    <style>
+      li {
+        list-style-type: none;
+      }
+      th {
+        background-color: rgb(125, 148, 75);
+      }
+      table {
+        border: 2px solid black;
+        width: 80vw;
+      }
+      td {
+        border: 2px solid black;
+        text-align: center;
+      }
+      ul {
+        padding: 0;
+      }
+      .dark {
+        font-size: 1em;
+        font-weight: 800;
+      }
+      button {
+        margin: 1em 0;
+        background-color: red;
+        padding: 0.5em;
+        font-size: 1.2em;
+        border: 2px black solid;
+        border-radius: 15px;
+      }
+      @media print {
+        button {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <h1>Order Details</h1>
+    </center>
+    <center>
+      <div class="orderdetails">
+        <table id="order-table">
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Table Number</th>
+              <th>Items</th>
+              <th>Quantity</th>
+              <th>Price</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for order in orders %}
+            <tr>
+              <td>{{ order._id }}</td>
+              <td>{{ order.table_number }}</td>
+              <td>
+                <ul>
+                  {% for dish, quantity in order['items'].items() %}
+                  <li>{{ dish }}</li>
+                  {% endfor %}
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  {% for dish, quantity in order['items'].items() %}
+                  <li>{{ quantity }}</li>
+                  {% endfor %}
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  {% set total_item = 0 %} {% for dish, quantity in
+                  order['items'].items() %} {% if dish in dc %} {% set price =
+                  dc[dish] %}
+                  <li>{{ price }} /-</li>
+                  {% endif %} {% endfor %}
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  {% set total_order = 0 %}
+                  <!-- Initialize total_order for each order -->
+                  {% for dish, quantity in order['items'].items() %} {% if dish
+                  in dc %} {% set price = dc[dish] %} {% set total_order =
+                  total_order + (price * quantity) %}
+                  <!-- Accumulate total_order for each dish -->
+                  <li>{{ price * quantity }} /-</li>
+                  {% endif %} {% endfor %}
+                  <!-- Display total_order for the current order -->
+                </ul>
+              </td>
+            </tr>
+            {% endfor %}
+            <tr>
+              <td colspan="5" style="text-align: right" class="dark">Total:</td>
+              <td>
+                <ul class="dark">
+                  {{ total_amount }} /-
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </center>
+    <center>
+      <button onclick="window.print()">Print</button>
+    </center>
+  </body>
+</html>

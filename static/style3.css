@@ -1,0 +1,191 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: rgb(27, 24, 24);
+}
+.header {
+  height: 10vh;
+  width: 60vw;
+  background-color: bisque;
+  border-radius: 35px;
+  filter: drop-shadow(0 0 0.75rem wheat);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2em;
+  font-weight: 900;
+  color: black;
+  font-size: 1.2em;
+  font-family: "Quicksand";
+  border: 2px solid black;
+}
+
+.container {
+  /* background-color: rgb(48, 45, 45); */
+  height: fit-content;
+  width: 95%;
+  margin: 1em;
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.row {
+  height: 50vh;
+  width: inherit;
+  margin: 2em 1em;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.items {
+  height: 50vh;
+  width: 21vw;
+  margin: 0.5em;
+  background-color: black;
+  border-radius: 15px;
+  border: 2px solid wheat;
+  filter: drop-shadow(0 0 0.75rem wheat);
+}
+
+.imageclass {
+  height: 34vh;
+  width: 17vw;
+  border-radius: 5px;
+  margin: 1em 1em;
+  background-size: cover;
+  background-position: center;
+}
+.imagename {
+  height: 9vh;
+  width: 19vw;
+  border-radius: 5px;
+  border: 2px solid wheat;
+  color: wheat;
+  position: relative;
+  bottom: 0.25em;
+  background-color: transparent;
+  text-align: center;
+  background-position: center;
+  background-size: contain;
+  /* font-size: auto; */
+  background-repeat: no-repeat;
+  font-weight: 400;
+  transition: all 0.5s ease-in-out;
+  overflow: hidden; /* Hide any content that overflows the button */
+  white-space: nowrap; /* Prevent text from wrapping to the next line */
+}
+.imagename:hover {
+  background-color: antiquewhite;
+  color: black;
+}
+.row {
+  height: auto; /* Adjusted to auto to allow dynamic height based on content */
+  width: 100%; /* Adjusted to 100% to occupy the full width */
+  margin: 2em 0; /* Adjusted margin for spacing */
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap; /* Changed to wrap to allow items to wrap to the next line */
+  justify-content: space-evenly;
+}
+
+.items {
+  height: auto; /* Adjusted to auto to allow dynamic height based on content */
+  width: calc(26.33% - -3em);
+  margin: 0.5em;
+  background-color: black;
+  border-radius: 15px;
+  border: 2px solid wheat;
+  filter: drop-shadow(0 0 0.75rem wheat);
+}
+
+@media screen and (max-width: 768px) {
+  .items {
+    width: calc(
+      50% - 1em
+    ); /* Adjusted to 50% to display two items per row on smaller screens */
+  }
+}
+
+#Quote {
+  height: 10vh;
+  width: 60vw;
+  background-color: bisque;
+  border-radius: 35px;
+  filter: drop-shadow(0 0 0.75rem wheat);
+  text-align: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2em;
+  font-weight: 900;
+  font-size: 1.2em;
+  font-family: "Quicksand";
+
+  border: 2px solid black;
+}
+
+#order {
+  width: fit-content;
+  height: 10vh;
+  padding: 0.5em 1.5em;
+  text-align: center;
+  border-radius: 15px;
+  background-color: rgb(178, 41, 41);
+  font-size: large;
+  font-weight: 700;
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  font-family: "Quicksand";
+  position: fixed;
+  bottom: 3em;
+  right: 6%;
+}
+#order:hover {
+  background-color: honeydew;
+  box-shadow: 0px 0px 10px wheat;
+}
+#order:active {
+  background-color: brown;
+}
+.container1 {
+  position: relative;
+  bottom: -0.5em;
+  right: -4%;
+  cursor: pointer;
+}
+
+.container1 input {
+  display: none;
+  color: antiquewhite;
+}
+
+.container1 svg {
+  overflow: visible;
+}
+
+.path {
+  fill: none;
+  stroke: white;
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke-dasharray 0.5s ease, stroke-dashoffset 0.5s ease;
+  stroke-dasharray: 241 9999999;
+  stroke-dashoffset: 0;
+}
+
+.container1 input:checked ~ svg .path {
+  stroke-dasharray: 70.5096664428711 9999999;
+  stroke-dashoffset: -262.2723388671875;
+}

@@ -1,0 +1,180 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bills</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='bills.css') }}" />
+    <link
+      rel="shortcut icon"
+      href="{{ url_for('static', filename='images.jpeg') }}" />
+  </head>
+  <body>
+    <center>
+      <h1>Orders</h1>
+      <div class="container">
+        {% for order_id in Order_Thali.keys()|reverse %} {% set order_details =
+        Order_Thali[order_id] %}
+        <div class="order">
+          <div class="order-header">
+            <center>
+              <p class="table_number">
+                Table Number: {{ order_details.table_number }}
+              </p>
+            </center>
+          </div>
+
+          <div class="list" id="order-list-{{ order_id }}">
+            <center>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Item</th>
+                    <th>Quantity</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for key, value in order_details.items() %} {% if key !=
+                  '_id' and key != 'table_number' and key != 'datetime' %} {%
+                  for item, quantity in order_details[key].items() %}
+                  <tr>
+                    <td>{{ item }}</td>
+                    <td>{{ quantity }}</td>
+                  </tr>
+                  {% endfor %} {% endif %} {% endfor %}
+                </tbody>
+              </table>
+            </center>
+          </div>
+
+          <div class="c">
+            <a
+              href="{{ url_for('delete_order', table_number = order_details.table_number ) }}">
+              <button>Delete Order</button>
+            </a>
+            <a
+              href="{{ url_for('view_order_details', table_number = order_details.table_number ) }}">
+              <button>Order Bill</button>
+            </a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </center>
+
+    <script>
+      function printTable(orderId) {
+        var orderListDiv = document.getElementById("order-list-" + orderId);
+        var content = orderListDiv.innerHTML;
+        var printWindow = window.open("", "_blank");
+        printWindow.document.write(
+          "<html><head><title>Print</title></head><body>" +
+            content +
+            "</body></html>"
+        );
+        printWindow.document.close();
+        printWindow.print();
+      }
+    </script>
+    <script>
+      // Reload the page every 5 seconds
+      setInterval(function () {
+        window.location.reload();
+      }, 10000); // 5000 milliseconds = 5 seconds
+    </script>
+  </body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bills</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bills.css') }}" />
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images.jpeg') }}" />
+  </head>
+  <body>
+    <center>
+      <h1>Orders</h1>
+      <div class="container">
+        {% for order_id in Order_Thali.keys()|reverse %} 
+          {% set order_details = Order_Thali[order_id] %}
+          <div class="order">
+            <div class="order-header">
+              <center>
+                <p class="table_number">
+                  Table Number: {{ order_details.table_number }}
+                </p>
+              </center>
+            </div>
+
+            <div class="list" id="order-list-{{ order_id }}">
+              <center>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Item</th>
+                      <th>Quantity</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for key, value in order_details.items() %} 
+                      {% if key != '_id' and key != 'table_number' and key != 'datetime' %}
+                        {% for item, quantity in order_details[key].items() %}
+                          <tr>
+                            <td>{{ item }}</td>
+                            <td>{{ quantity }}</td>
+                          </tr>
+                        {% endfor %} 
+                      {% endif %} 
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </center>
+            </div>
+
+            <div class="c">
+              <a href="{{ url_for('delete_order', table_number = order_details.table_number ) }}">
+                <button>Delete Order</button>
+              </a>
+              <a href="{{ url_for('view_order_details', table_number = order_details.table_number ) }}">
+                <button>Order Bill</button>
+              </a>
+              <!-- Adding buttons for payment options -->
+              <div class="payment-options">
+                <label><input type="radio" name="payment_option{{ order_id }}" value="cash"> Cash</label>
+                <label><input type="radio" name="payment_option{{ order_id }}" value="online"> Online</label>
+                <label><input type="radio" name="payment_option{{ order_id }}" value="due"> Due</label>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </center>
+
+    <script>
+      function printTable(orderId) {
+        var orderListDiv = document.getElementById("order-list-" + orderId);
+        var content = orderListDiv.innerHTML;
+        var printWindow = window.open("", "_blank");
+        printWindow.document.write(
+          "<html><head><title>Print</title></head><body>" +
+            content +
+            "</body></html>"
+        );
+        printWindow.document.close();
+        printWindow.print();
+      }
+    </script>
+    <script>
+      // Reload the page every 5 seconds
+      // 5000 milliseconds = 5 seconds
+    </script>
+  </body>
+</html>
+
+setInterval(function () {
+  window.location.reload();
+}, 10000);

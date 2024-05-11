@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ dish }} Dishes</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style3.css') }}" />
+      <link rel="shortcut icon" href="{{ url_for('static', filename='images.jpeg') }}">
+
+  </head>
+  <body>
+    <form method="POST" action="/submit_order">
+      <center>
+        <div class="header">{{ dish }} Dishes</div>
+      </center>
+      <div class="container">
+        {% set count = 0 %}
+        <div class="row">
+          {% for thali_name, image_url in Thali.items() %}
+          <div class="items">
+            <center>
+              <div
+                class="imageclass"
+                style="background-image: url('{{ image_url }}')"></div>
+            </center>
+            <center>
+              <button class="imagename">{{ thali_name }}</button>
+              <label class="container1">
+                <!-- Assign a unique name to each checkbox for identification -->
+                <input type="checkbox" name="item" value="{{ thali_name }}" />
+
+                <svg viewBox="0 0 64 64" height="2em" width="2em">
+                  <path
+                    d="M 0 16 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 16 L 32 48 L 64 16 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 16"
+                    pathLength="575.0541381835938"
+                    class="path"></path>
+                </svg>
+              </label>
+            </center>
+          </div>
+
+          {% if count == 2 %}
+        </div>
+        <!-- Close the current row -->
+        <div class="row">
+          <!-- Open a new row -->
+          {% endif %} {% set count = count + 1 %} {% endfor %} {% if count > 0
+          %}
+        </div>
+        <!-- Close the last row if there are remaining items -->
+        {% endif %}
+      </div>
+      <!-- Close the container div -->
+
+      <!-- <form method="post" action="/submit_order"> -->
+      <!-- The form submits selected items to the server -->
+      <button type="submit" id="order">Order</button>
+    </form>
+
+    <center>
+      <div id="Quote"><p>You've all Caught Up!</p></div>
+    </center>
+  </body>
+</html>

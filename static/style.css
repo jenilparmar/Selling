@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-image: url(https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2b/0a/e4/a9/viva-where-every-corner.jpg?w=1200&h=-1&s=1);
+  background-size: contain;
+  background-position: -65% 99%;
+}
+.container {
+  background-color: transparent;
+
+  width: 90vw;
+  background-color: rgb(37, 37, 37);
+
+  height: 100vh;
+  /* background-color: aliceblue; */
+  clip-path: polygon(0 0, 63% 0, 47% 100%, 0% 100%);
+}
+#Welcome {
+  font-size: 8em;
+  position: relative;
+  top: 10%;
+  left: 1%;
+  font-family: "Quicksand";
+  font-weight: 700;
+  color: wheat;
+}
+
+button {
+  padding: 10px 20px;
+  text-transform: uppercase;
+  border-radius: 8px;
+  font-size: 17px;
+  font-weight: 500;
+  color: wheat;
+  text-shadow: none;
+  background: transparent;
+  cursor: pointer;
+  box-shadow: transparent;
+  border: 1px solid #ffffff80;
+  transition: 0.5s ease;
+  user-select: none;
+  position: relative;
+    top: 4em;
+    left: -12em;
+}
+
+#btn {
+  margin: -1em 11em;
+}
+#btn:hover,
+:focus {
+  color: black;
+  background: transparent;
+  border: 1px solid wheat;
+  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
+  box-shadow: 0 0 5px wheat, 0 0 20px wheat, 0 0 50px wheat, 0 0 100px wheat;
+}
+@media only screen and (max-width: 455px) {
+  body {
+    margin: 0;
+    padding: 0;
+    background-image: none;
+  }
+  
+  html{
+  background-image: url(pngtree-elegant-black-frame-with-gold-frames-and-flowers-image_13368824.jpg);
+
+  background-repeat: no-repeat;
+
+  /* background-position: 25% 75%; */
+  background-position-x: -0%;
+  background-position-y: 0%;
+    background-size: 100vw 100vh;
+
+}
+@keyframes underline {
+  0% {
+    width: 0;
+    left: 50%;
+  }
+  100%{
+    width: 100%;
+    left: 0;
+  }
+  
+}
+
+
+  /* Other styles... */
+  #Welcome {
+    font-size: 3em;
+    margin-top: 2.5em;
+    background-color: transparent;
+    color: black;
+    align-self: center;
+    text-shadow: 0 0 5px wheat, 0 0 10px wheat, 0 0 20px wheat;
+    /* box-shadow: 0 0 5px wheat, 0 0 20px wheat, 0 0 50px wheat, 0 0 100px wheat; */
+    position: relative;
+  }
+
+  #Welcome::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: wheat;
+    animation: underline 2s forwards;
+
+  }
+
+.container{
+  clip-path: none;
+  background:none;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  display: flex;
+  gap: 5em;
+}
+#btn{
+  /* background-color: blue; */
+position: relative;
+/* right: 0%; */
+left:-45px;
+
+}
+#btn:hover,
+:active {
+  color: black;
+  background: transparent;
+  border: 1px solid wheat;
+  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
+  box-shadow: 0 0 5px wheat, 0 0 20px wheat, 0 0 50px wheat, 0 0 100px wheat;
+}
+}
