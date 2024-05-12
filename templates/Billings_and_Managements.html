@@ -143,11 +143,7 @@
                 <button>Order Bill</button>
               </a>
               <!-- Adding buttons for payment options -->
-              <div class="payment-options">
-                <label><input type="radio" name="payment_option{{ order_id }}" value="cash"> Cash</label>
-                <label><input type="radio" name="payment_option{{ order_id }}" value="online"> Online</label>
-                <label><input type="radio" name="payment_option{{ order_id }}" value="due"> Due</label>
-              </div>
+             
             </div>
           </div>
         {% endfor %}
@@ -171,10 +167,10 @@
     <script>
       // Reload the page every 5 seconds
       // 5000 milliseconds = 5 seconds
-    </script>
-  </body>
-</html>
-
+      
 setInterval(function () {
   window.location.reload();
 }, 10000);
+    </script>
+  </body>
+</html>

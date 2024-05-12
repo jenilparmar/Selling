@@ -91,7 +91,7 @@ button:hover {
 }
 .list {
   position: relative;
-  right: -15%;
+  right: -22%;
   width: fit-content;
   height: fit-content;
   margin-top: 2em;
@@ -114,9 +114,3 @@ td {
   flex-direction: row;
 }
 
-.payment-options{
-  display: flex;
-  gap: 2em;
-  margin-left: -14em;
-  margin-top: -1.5em;
-}
